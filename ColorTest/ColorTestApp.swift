@@ -7,11 +7,18 @@
 
 import SwiftUI
 
+import SwiftData
+
 @main
 struct ColorTestApp: App {
+    init() {
+        UIColorValueTransformer.register()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: ColorModel.self)
     }
 }
