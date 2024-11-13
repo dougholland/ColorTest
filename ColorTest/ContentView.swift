@@ -124,8 +124,6 @@ struct ContentView: View {
     func copyColorAsData(_ color: Color) -> Color {
         let uiColor = UIColor(color)
         
-        uiColor.printColorComponents()
-        
         let transformer: UIColorValueTransformer = UIColorValueTransformer()
         
         let data: Data? = transformer.transformedValue(uiColor) as? Data
@@ -134,8 +132,6 @@ struct ContentView: View {
             let transformedColor: UIColor? = transformer.reverseTransformedValue(data) as? UIColor
             
             if let transformedColor = transformedColor {
-                transformedColor.printColorComponents()
-                
                 return Color(uiColor: transformedColor)
             }
         }
