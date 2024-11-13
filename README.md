@@ -7,5 +7,7 @@ This readme will be updated once Apple Developer Support provides some insight a
 
 ![Color Bug 1](https://github.com/user-attachments/assets/c43742a5-b0d4-40f6-b101-0a99fe0b0df4)
 
+Interestingly, the background color used for the MapFeature representing Mount Whitney, shown on the left of the screenshot below, does not appear in the three color rectangles. In light appearance however, as with the previous example, the background color is correctly displayed.
+
 ![Color Bug 2](https://github.com/user-attachments/assets/6ad5010e-1242-4446-80aa-a6ad316a3fd2)
 
