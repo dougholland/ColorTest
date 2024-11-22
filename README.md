@@ -13,3 +13,12 @@ Interestingly, the background color used for the MapFeature representing Mount W
 
 ![Color Bug 2](https://github.com/user-attachments/assets/6ad5010e-1242-4446-80aa-a6ad316a3fd2)
 
+## Update
+
+Ed Ford from Apple responded to the [forum post](https://forums.developer.apple.com/forums/thread/768918) suggesting that instead of storing the SwiftUI Color as one variable within the SwiftData model, it should instead be stored as separate values for its components. I have updated the code in this repository to additionally store the components as CGFloat values and recreate the color accordingly. The original issue however, is still present. When storing a Color that originates from the MapKit MapFeature.backgroundColor, it appears to be restored as the light appearance variation of the color rather than the dark appearance variation. Ideally, we should be able to store one Color and have the system adjust it based on whether the user has the light or dark appearance selected.
+
+This is illustrated below, where the MapFeature representing Joshua Tree National Park is selected. The original color and transformed color are the same as the MapFeature.backgroundColor, while the restored colors from SwiftData are the light appearance variation.
+
+![Color Bug 4](https://github.com/user-attachments/assets/913bb184-b29b-447b-b608-101a1245a5ba)
+
+![Color Bug 5](https://github.com/user-attachments/assets/b48aecf5-97c7-4386-8aa6-ee38f61ea25a)
