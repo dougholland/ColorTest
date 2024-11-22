@@ -26,6 +26,8 @@ struct ContentView: View {
     
     @State var color3 = Color.blue
     
+    @State var color4 = Color.blue
+    
     @State private var position: MapCameraPosition = .automatic
     
     @State var selection: MapSelection<MKMapItem>?
@@ -63,6 +65,14 @@ struct ContentView: View {
                     .fill(color3)
                 
                 Text("SwiftData Query Color")
+                    .foregroundStyle(.white)
+            }
+            
+            ZStack {
+                Rectangle()
+                    .fill(color3)
+                
+                Text("SwiftData Query Color Components")
                     .foregroundStyle(.white)
             }
         }
@@ -111,6 +121,12 @@ struct ContentView: View {
             // copy the color from the SwiftData query.
             if let color = colors.last?.uiColor {
                 self.color3 = Color(color)
+            }
+            
+            if let red = colors.last?.red, let green = colors.last?.green, let blue = colors.last?.blue, let opacity = colors.last?.opacity {
+                let color: Color = Color(red: red, green: green, blue: blue, opacity: opacity)
+                
+                self.color4 = color
             }
         }
     }
